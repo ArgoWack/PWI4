@@ -31,7 +31,6 @@
         background-color: rgba(0, 0 , 0, 0.7);
         padding: 20px;
       }
-	  
 
       /* Header */
       header {
@@ -43,7 +42,7 @@
       h1 {
         font-size: 36px;
         margin-bottom: 20px;
-		color: #ffffff;
+        color: #ffffff;
       }
 
       /* Text */
@@ -52,7 +51,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-		color: #ffffff;
+        color: #ffffff;
       }
 
       p {
@@ -83,19 +82,43 @@
         letter-spacing: 2px;
       }
     </style>
+
+    <!-- include i18next script -->
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/jquery-i18next/dist/umd/jquery-i18next.min.js"></script>
+    <script>
+      i18next.init({
+        lng: 'pl', // Default language
+        resources: {
+          pl: {
+            translation: {} // Will be filled from pl.json
+          },
+          en: {
+            translation: {} // Will be filled from en.json
+          }
+        }
+      }, function(err, t) {
+        // Initialize jquery-i18next
+        jqueryI18next.init(i18next, $);
+
+        // Localize your page
+        $('.title').localize();
+        $('.description').localize();
+        $('.menu').localize();
+      });
+    </script>
   </head>
 
   <body>
     <main>
       <header>
-        <h1>Salamandra ognista</h1>
+        <h1 class="title" data-i18n="title">Salamandra ognista</h1>
       </header>
       <div class="text">
-      
-        <p>Salamandra plamista, jaszczur plamisty, jaszczur ognisty – gatunek płaza ogoniastego z rodziny salamandrowatych o charakterystycznym wyglądzie i szerokim zasięgu występowania. Prowadzi samotniczy, drapieżny tryb życia. Wyróżnia się liczne podgatunki. Nazwy naukowa i polska płaza prawdopodobnie sięgają rodowodem języka perskiego, w którym słowo to oznacza „żyjąca w ogniu”. Może ono jednak pochodzić także od arabskiego słowa samandar, pod jaką nazwą salamandra funkcjonuje wciąż w arabskim i perskim.</p>
+        <p class="description" data-i18n="description">Salamandra plamista...</p>
       </div>
       <div class="image"></div>
-      <nav>Menu</nav>
+      <nav class="menu" data-i18n="menu">Menu</nav>
     </main>
   </body>
 </html>
