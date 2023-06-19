@@ -65,15 +65,24 @@ p {
   height: 500px;
 }
 
-/* Menu */
-nav {
+/* Buttons */
+button {
   grid-area: menu;
-  background-color: #343a40;
-  color: #FFF;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007BFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #003680;
 }
 
