@@ -47,7 +47,6 @@ function fetchTranslation(language) {
 function updateContent() {
   document.querySelector('h1').innerHTML = i18next.t('title');
   document.querySelector('p').innerHTML = i18next.t('description');
-  document.querySelector('nav').innerHTML = i18next.t('menu');
 }
 
 function changeLanguage(lng) {
